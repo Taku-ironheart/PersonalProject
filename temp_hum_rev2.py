@@ -26,10 +26,10 @@ j=0
 for i in range(10):
 	[temp,humidity] = grovepi.dht(sensor,blue)
 	if math.isnan(temp) == False and math.isnan(humidity) == False:
-		j = j + 1
-    	temp +=temp
-    	humidity +=humidity
-    	#print("temp = %.02f C humidity =%.02f%%"%(temp, humidity))
+                j = j + 1
+                temp +=temp
+                humidity +=humidity
+                #print("temp = %.02f C humidity =%.02f%%"%(temp, humidity))
 
 avrg_temp=temp / j
 avrg_humidity=humidity / j
