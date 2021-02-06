@@ -3,6 +3,15 @@
 import requests
 import grovepi
 import math
+
+url = "https://notify-api.line.me/api/notify" 
+token = "KSrZELTc6hzCPOhyhRGj2eEvR4GgnswejJLDYhY0ieP"
+headers = {"Authorization" : "Bearer "+ token} 
+message =  "ラズパイからメッセージを受信しました！" 
+payload = {"message" :  message} 
+r = requests.post(url, headers = headers, params=payload)
+
+
 # Connect the Grove Temperature & Humidity Sensor Pro to digital port D4
 # This example uses the blue colored sensor.
 # SIG,NC,VCC,GND
@@ -24,9 +33,3 @@ while True:
     except IOError:
         print ("Error")
         
-url = "https://notify-api.line.me/api/notify" 
-token = "KSrZELTc6hzCPOhyhRGj2eEvR4GgnswejJLDYhY0ieP"
-headers = {"Authorization" : "Bearer "+ token} 
-message =  "ラズパイからメッセージを受信しました！" 
-payload = {"message" :  message} 
-r = requests.post(url, headers = headers, params=payload)
