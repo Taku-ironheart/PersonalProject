@@ -22,21 +22,22 @@ sensor = 4  # The Sensor goes on digital port 4.
 blue = 0    # The Blue colored sensor.
 white = 1   # The White colored sensor.
 
-j=0
+j=1
 for i in range(10):
 	[temp,humidity] = grovepi.dht(sensor,blue)
 	if math.isnan(temp) == False and math.isnan(humidity) == False:
-                j = j + 1
-                temp +=temp
-                humidity +=humidity
                 print(j)
-                print(temp)
-                print(humidity)
-                #print("temp = %.02f C humidity =%.02f%%"%(temp, humidity))
+                print("temp = %.02f C humidity =%.02f%%"%(temp, humidity))
+                total_j = j + 1
+                total_temp +=temp
+                total_humidity +=humidity
+        else:
+                continue
+    
 
 avrg_temp=temp / j
 avrg_humidity=humidity / j
 
-print(avrg_temp)
-print(avrg_humidity)
+print("avrg_temp:"+ str(avrg_temp))
+print("avrg_humidity:" + str(avrg_humidity))
 
