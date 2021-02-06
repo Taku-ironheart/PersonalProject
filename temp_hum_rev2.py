@@ -29,9 +29,14 @@ for i in range(10):
                 j = j + 1
                 temp +=temp
                 humidity +=humidity
+                print(j)
+                print(temp)
+                print(humidity)
                 #print("temp = %.02f C humidity =%.02f%%"%(temp, humidity))
 
 avrg_temp=temp / j
 avrg_humidity=humidity / j
 
+print(avrg_temp)
+print(avrg_humidity)
 
