@@ -22,6 +22,7 @@ sensor = 4  # The Sensor goes on digital port 4.
 blue = 0    # The Blue colored sensor.
 white = 1   # The White colored sensor.
 
+
 while True:
     try:
         # This example uses the blue colored sensor. 
