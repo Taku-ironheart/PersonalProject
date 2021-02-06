@@ -42,3 +42,16 @@ avrg_humidity=total_humidity / num
 
 print("avrg_temp:"+ str(avrg_temp))
 print("avrg_humidity:" + str(avrg_humidity))
+
+#url = "https://notify-api.line.me/api/notify" 
+#token = "KSrZELTc6hzCPOhyhRGj2eEvR4GgnswejJLDYhY0ieP"
+#headers = {"Authorization" : "Bearer "+ token} 
+#message =  "ラズパイからメッセージを受信しました！" 
+#payload = {"message" :  message} 
+#r = requests.post(url, headers = headers, params=payload)
+
+url = "https://notify-api.line.me/api/notify" 
+token = "KSrZELTc6hzCPOhyhRGj2eEvR4GgnswejJLDYhY0ieP"
+headers = {"Authorization" : "Bearer "+ token} 
+message = ["気温" + str(format(avrg_temp,'.1f')) + "C", "湿度" + str(format(avrg_humidity,'.1f')) + "％"]
+r = requests.post(url, headers = headers, params=payload)
